@@ -1,3 +1,15 @@
+/**
+ * Code developed and maintained by Sharded-Games.
+ * Licensed under the GPLv3
+ *
+ * @author Dave Cotterill
+ *
+ * (c)2019 ShardedGames.com, https://github.com/sharded-gaming/regex-renamer
+ *
+ * Please keep this notice here AS IS going forward.
+ * ShardedGames and the author provide no warranty and liability for the code provided AS IS.
+ */
+
 #include <windows.h>
 #include <stdio.h> 
 #include <conio.h>
@@ -5,6 +17,11 @@
 
 #include "re2/re2.h"
 
+#define VERSION "0.0.1"
+
+/**
+ * Command Line Parameters
+ */
 typedef enum __tagFlags {
 	FLAG_SUBFOLDERS = 0,
 	FLAG_PREVIEW,
@@ -21,6 +38,9 @@ static bool mFlags[] =  {
 	false
 };
 
+/** 
+ * Data
+ */
 static char* mSrcRegex = NULL;
 static char* mDestRegex = NULL;
 
@@ -29,7 +49,7 @@ static char* mDestRegex = NULL;
  */
 void showHelp()
 {
-	printf("RegexRenamer 0.0.1\r\n");
+	printf("RegexRenamer " VERSION "\r\n");
 	printf("  RegexRenamer.exe [options] srcRegex destRegex\r\n");
 	printf("\r\n");
 	printf("  Options: \r\n");
@@ -43,6 +63,7 @@ void showHelp()
 
 /**
  * Shows an error in the console
+ * @param errMsg Error Message to display
  */
 void showError(const char* errMsg)
 {
@@ -52,6 +73,8 @@ void showError(const char* errMsg)
 
 /**
  * Parse the command line
+ * @param argc
+ * @param argv
  */
 bool parseCommandline(int argc, char*argv[])
 {
@@ -99,6 +122,9 @@ bool ret = false;
 	return ret;
 }
 
+/**
+ * Class / Structure to hold a list of files that need renaming
+ */
 class ChangeEntry {
 public:
 	std::string mSrc;
@@ -107,6 +133,8 @@ public:
 
 /**
  * Main process
+ * @param argc
+ * @param argv
  */
 int main(int argc, char*argv[])
 {
