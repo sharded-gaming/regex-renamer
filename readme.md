@@ -3,6 +3,11 @@ Useful command line tool that takes a regex for both source file finding and des
 file finding to allow renaming of files based on regular expresions rather than a normal OS level 
 Pattern.
 
+# Information
+
+More information can be found here: http://www.shardedtools.com/code/opengl-framework/
+and more tools/code etc can be seen: http://www.shardedtools.com
+
 # Platform Support
 
 * Windows
