@@ -5,7 +5,7 @@ Pattern.
 
 # Information
 
-More information can be found here: http://www.shardedtools.com/code/opengl-framework/
+More information can be found here: http://www.shardedtools.com/blog/regex-renamer/
 and more tools/code etc can be seen: http://www.shardedtools.com
 
 # Platform Support
